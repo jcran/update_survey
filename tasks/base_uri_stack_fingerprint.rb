@@ -1,16 +1,16 @@
 
-module Intrigue
+module UpdateSurvey
 module Task
-class LeanUriStackFingerprint < BaseTask
+class BaseUriStackFingerprint < BaseTask
   include Intrigue::Task::Web
   include Intrigue::Task::Product
 
   def self.metadata
     {
-      :name => "enrich/lean_uri_stack_fingerprint",
-      :pretty_name => "Lean Uri Stack Fingerprint",
+      :name => "enrich/base_uri_stack_fingerprint",
+      :pretty_name => "Base Uri Stack Fingerprint",
       :authors => ["jcran"],
-      :description => "Fingerprints the coponents of of a Uri, giving insight into the products.",
+      :description => "Fingerprints the coponents of of a uri, giving insight into the products.",
       :references => [
         "http://www.net-square.com/httprint_paper.html",
         "https://www.troyhunt.com/shhh-dont-let-your-response-headers/",
@@ -21,8 +21,8 @@ class LeanUriStackFingerprint < BaseTask
       ],
       :type => "enrichment",
       :passive => false,
-      :allowed_types => ["LeanUri"],
-      :example_entities => [{"type" => "LeanUri", "details" => {"name" => "https://intrigue.io"}}],
+      :allowed_types => ["BaseUri"],
+      :example_entities => [{"type" => "BaseUri", "details" => {"name" => "https://intrigue.io"}}],
       :allowed_options => [],
       :created_types => []
     }

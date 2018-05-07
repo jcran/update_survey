@@ -1,11 +1,11 @@
-module Intrigue
+module UpdateSurvey
 module Entity
-class LeanUri < Intrigue::Model::Entity
+class BaseUri < Intrigue::Model::Entity
 
   def self.metadata
     {
-      :name => "LeanUri",
-      :description => "A Website or Webpage - no browser session",
+      :name => "BaseUri",
+      :description => "A Website",
       :user_creatable => false
     }
   end
@@ -21,7 +21,7 @@ class LeanUri < Intrigue::Model::Entity
   end
 
   def enrichment_tasks
-    ["enrich/lean_uri", "enrich/lean_uri_stack_fingerprint"]
+    ["enrich/base_uri", "enrich/base_uri_stack_fingerprint"]
   end
 
 end

@@ -1,20 +1,20 @@
-module Intrigue
+module UpdateSurvey
 module Task
-class EnrichLeanUri < BaseTask
+class EnrichBaseUri < BaseTask
   include Intrigue::Task::Web
   include Intrigue::Task::Browser
 
   def self.metadata
     {
-      :name => "enrich/lean_uri",
-      :pretty_name => "Enrich LeanUri",
+      :name => "enrich/base_uri",
+      :pretty_name => "Enrich A BaseUri",
       :authors => ["jcran"],
-      :description => "Sets the \"api\" detail, letting us know if this is an api endpoint.",
+      :description => "",
       :references => [],
       :type => "enrichment",
       :passive => false,
-      :allowed_types => ["LeanUri"],
-      :example_entities => [{"type" => "LeanUri", "details" => {"name" => "https://intrigue.io"}}],
+      :allowed_types => ["BaseUri"],
+      :example_entities => [{"type" => "BaseUri", "details" => {"name" => "https://intrigue.io"}}],
       :allowed_options => [],
       :created_types => []
     }
