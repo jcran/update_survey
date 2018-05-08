@@ -1,6 +1,6 @@
 module UpdateSurvey
 module Task
-class EnrichBaseUri < BaseTask
+class EnrichBaseUri < Intrigue::Task::BaseTask
   include Intrigue::Task::Web
   include Intrigue::Task::Browser
 

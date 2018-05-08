@@ -1,7 +1,7 @@
 
 module UpdateSurvey
 module Task
-class BaseUriStackFingerprint < BaseTask
+class BaseUriStackFingerprint < Intrigue::Task::BaseTask
   include Intrigue::Task::Web
   include Intrigue::Task::Product
 

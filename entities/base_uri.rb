@@ -11,7 +11,7 @@ class BaseUri < Intrigue::Model::Entity
   end
 
   def validate_entity
-    name =~ /^\w.*$/
+    name =~ /^https?:\w.*$/
   end
 
   def detail_string
