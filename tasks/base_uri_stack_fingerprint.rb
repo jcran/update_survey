@@ -75,10 +75,15 @@ class BaseUriStackFingerprint < Intrigue::Task::BaseTask
 
     # this has now been moved into Intrigue::Task::Web
     # for details on the fingerprints, see the lib/fingerprints directory
-    app_stack.concat fingerprint_uri(uri).map{|x| "#{x[:name]} #{x[:version]}"}
-    uniq_app_stack =  app_stack.select{ |x| x != nil }.uniq
-    @entity.set_detail("app_fingerprint", uniq_app_stack)
-    _log "Setting app stack to #{uniq_app_stack}"
+    fingerprint = fingerprint_uri(uri)
+    if fingerprint
+      app_stack.concat fingerprint.map{|x| "#{x[:name]} #{x[:version]}"}
+      uniq_app_stack =  app_stack.select{ |x| x != nil }.uniq
+      @entity.set_detail("app_fingerprint", uniq_app_stack)
+      _log "Setting app stack to #{uniq_app_stack}"
+    else
+      entity.set_detail("app_fingerprint", [])
+    end
 
     ###
     ### Fingerprint the js libraries
