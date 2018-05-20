@@ -168,16 +168,19 @@ class BaseUriStackFingerprint < Intrigue::Task::BaseTask
     stack = []
 
     # Iterate through the target strings, which can be found in the web mixin
-    http_body_checks.each do |check|
-      matches = response.body.scan(check[:regex])
+    if response.body
+      http_body_checks.each do |check|
 
-      # Iterate through all matches
-      matches.each do |match|
-        stack << check[:finding_name]
-      end if matches
+        matches = response.body.scan(check[:regex])
+
+        # Iterate through all matches
+        matches.each do |match|
+          stack << check[:finding_name]
+        end if matches
+      end
+      # End interation through the target strings
+      ###
     end
-    # End interation through the target strings
-    ###
   stack
   end
 
