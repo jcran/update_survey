@@ -82,7 +82,7 @@ class BaseUriStackFingerprint < Intrigue::Task::BaseTask
       @entity.set_detail("app_fingerprint", uniq_app_stack)
       _log "Setting app stack to #{uniq_app_stack}"
     else
-      entity.set_detail("app_fingerprint", [])
+      @entity.set_detail("app_fingerprint", [])
     end
 
     ###
