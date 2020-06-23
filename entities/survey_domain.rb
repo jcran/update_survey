@@ -28,3 +28,4 @@ class Domain < Intrigue::Core::Model::Entity
 end
 end
 end
+end
